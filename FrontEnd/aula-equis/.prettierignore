@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+coverage
+dist
+vite.config.js
+package.json
+package-lock.json
+postcss.config.cjs
+.eslintrc.json
+.prettierrc.json
+index.html

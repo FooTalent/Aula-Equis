@@ -1,6 +1,6 @@
-function App() {
+function App () {
   return (
-    <div className='bg-red-800'>
+    <div className="bg-red-800">
       <p>Hola</p>
     </div>
   )
