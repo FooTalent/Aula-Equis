@@ -1,8 +1,10 @@
-function App () {
+import FormLogin from './aula-equis/pages/formLogin/FormLogin'
+
+function App() {
   return (
-    <div className="bg-red-800">
-      <p>Hola</p>
-    </div>
+    <>
+      <FormLogin />
+    </>
   )
 }
 
