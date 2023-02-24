@@ -1,11 +1,7 @@
-import FormLogin from './aula-equis/pages/formLogin/FormLogin'
+import { AppRouter } from './router/AppRouter'
 
 function App() {
-  return (
-    <>
-      <FormLogin />
-    </>
-  )
+  return <AppRouter />
 }
 
 export default App

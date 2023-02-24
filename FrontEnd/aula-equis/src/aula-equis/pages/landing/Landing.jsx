@@ -1,6 +1,15 @@
-import { Navbar, Button } from '../../components'
-const Landing = () => {
-  return <></>
-}
+import Navbar from '../../components/NavBar/Navbar'
 
-export default Landing
+export const Landing = () => {
+  return (
+    <>
+      <div
+        className="bg-gradient-to-br from-amber-500 via-amber-100 to-white
+      h-screen"
+      >
+        <Navbar />
+        <h1>landung</h1>
+      </div>
+    </>
+  )
+}
