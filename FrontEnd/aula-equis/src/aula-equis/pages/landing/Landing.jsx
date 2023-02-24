@@ -1,10 +1,6 @@
 import { Navbar, Button } from '../../components'
 const Landing = () => {
-  return (
-    <>
-
-    </>
-  )
+  return <></>
 }
 
 export default Landing
