@@ -6,7 +6,7 @@ module.exports = {
       width: {
         formLoginLg: '38.125em',
         formLoginMd: '27em',
-        imgLoginLg: '46.25em',
+        imgLoginLg: '52em',
         imgLoginMd: '41.125em',
         logoLoginLg: '18.904em',
         InputLg: '25.188em',
