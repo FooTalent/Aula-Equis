@@ -1,8 +1,9 @@
 import landig from '../../assets/landing.svg'
+import Navbar from '../../components/NavBar/Navbar'
 export const Landing = () => {
   return (
     <div className="bg-gradient-to-br from-amber-500 via-orange-100 to-white h-screen ">
-      <div className="flex "></div>
+      <Navbar />
       <div className="lg:flex items-center  justify-center md:grid text-center  sm:px-36 ">
         <div className="lg:ml-32 lg:text-left">
           <h2 className="text-2xl font-semibold pb-10 sm:text-4xl   lg:text-5xl lg:pb-5">
