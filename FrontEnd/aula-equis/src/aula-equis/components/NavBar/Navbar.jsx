@@ -15,7 +15,7 @@ const Navbar = () => {
       <header>
         <div className="mx-auto flex h-16 max-w-screen-xxl items-center justify-between px-4">
           <div className=" w-16 h-6 md:w-40 md:h-14">
-            <Link className="rounded-full" type="button">
+            <Link to={'/home'} className="rounded-full" type="button">
               <img src={logo} alt="logo" />
             </Link>
           </div>
