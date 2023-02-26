@@ -2,7 +2,7 @@ import { Formik, Form, Field } from 'formik'
 import { IoMdMail } from 'react-icons/Io'
 import { GoEyeClosed } from 'react-icons/Go'
 import logo from '../../components/assets/logo.svg'
-import imgLoginAlumno from '../../components/assets/imgLoginAlumno.svg'
+import imgLoginAlumno from '../../components/assets/imgAlumnoLogin.svg'
 import { Link } from 'react-router-dom'
 
 const FormLogin = () => {
@@ -42,10 +42,10 @@ const FormLogin = () => {
             </nav>
           </div>
         </header>
-        <div className="flex justify-between   relative ">
-          <div className="absolute flex  w-1/2">
+        <div className="md:flex md:justify-between  min-w-full  md:relative ">
+          <div className="absolute top-28 flex container">
             <img
-              className=" w-56 h-48 md:w-imgLoginMd md:h-imgLoginMd  lg:w-imgLoginLg lg:h-imgLoginLg"
+              className=" w-56 h-48  sm:w-imgLoginSm sm:h-imgLoginSm  md:w-imgLoginMd md:h-imgLoginMd  lg:w-imgLoginLg lg:h-imgLoginLg"
               src={imgLoginAlumno}
               alt=""
             />
@@ -60,7 +60,7 @@ const FormLogin = () => {
               <div className="mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:mr-24   ">
                 <Form
                   action=""
-                  className="absolute  right-24  mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 md:w-formLoginMd md:h-formLoginLg lg:p-8 lg:w-formLoginLg bg-gradient-to-b from-green-700 via-green-300 to-white"
+                  className="absolute container right-16   md:ml-14 mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 md:w-formLoginMd md:h-formLoginLg lg:p-8 lg:w-formLoginLg bg-gradient-to-b from-green-700 via-green-300 to-white"
                 >
                   <p className="text-center mt-12 text-white text-2xl font-bold">
                     INICIAR SESIÓN
@@ -99,7 +99,7 @@ const FormLogin = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="flex relative mt-6 md:left-36 lg:left-56 text-xl text-purple-700">
+                  <div className="flex w-16   relative mt-6 md:left-36 lg:left-56 text-xl text-purple-700">
                     <Link className="underline" href="">
                       ¿Olvidaste tu contraseña?
                     </Link>
