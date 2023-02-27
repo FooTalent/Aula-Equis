@@ -4,48 +4,36 @@ import imgTutorLogin from '../../src/aula-equis/components/assets/imgTutorLogin.
 import imgEscuelaLogin from '../../src/aula-equis/components/assets/imgEscuelaLogin.svg'
 import { useLocation } from 'react-router-dom'
 
-export const imgPath = () => {
+export const consultarPath = () => {
   const { pathname } = useLocation()
+  let userRol = {}
   if (pathname === '/login-alumno') {
-    return imgAlumnoLogin
+    userRol = {
+      img: imgAlumnoLogin,
+      rol: 'ALUMNO',
+      bg: 'from-greenDarkAlumno via-greenLightAlumno to-white',
+    }
+    return userRol
   } else if (pathname === '/login-docente') {
-    return imgDocenteLogin
+    userRol = {
+      img: imgDocenteLogin,
+      rol: 'DOCENTE',
+      bg: 'from-blueDarkDocente via-blueLightDocente',
+    }
+    return userRol
   } else if (pathname === '/login-tutor') {
-    return imgTutorLogin
+    userRol = {
+      img: imgTutorLogin,
+      rol: 'TUTOR',
+      bg: 'from-orangeDarkTutor via-orangeLightTutor',
+    }
+    return userRol
   } else {
-    return imgEscuelaLogin
+    userRol = {
+      img: imgEscuelaLogin,
+      rol: 'ESCUELA',
+      bg: 'from-redDarkEscuela via-redLightEscuela',
+    }
+    return userRol
   }
 }
-export const rolPath = () => {
-  const { pathname } = useLocation()
-  if (pathname === '/login-alumno') {
-    return 'ALUMNO'
-  } else if (pathname === '/login-docente') {
-    return 'DOCENTE'
-  } else if (pathname === '/login-tutor') {
-    return 'TUTOR'
-  } else {
-    return 'ESCUELA'
-  }
-}
-export const bgPath = () => {
-  const { pathname } = useLocation()
-  if (pathname === '/login-alumno') {
-    return 'from-green-700 via-green-300 to-white'
-  } else if (pathname === '/login-docente') {
-    return 'from-blue-900 via-neutral-300'
-  } else if (pathname === '/login-tutor') {
-    return 'from-orange-400 via-orange-300'
-  } else {
-    return 'from-rose-400 via-rose-300'
-  }
-}
-
-// export const imgPath = () =>
-//   pathname === '/login-alumno'
-//     ? imgAlumnoLogin
-//     : pathname === '/login-docente'
-//     ? imgDocenteLogin
-//     : pathname === '/login-tutor'
-//     ? imgTutorLogin
-//     : imgEscuelaLogin
