@@ -46,7 +46,6 @@ const FormLogin = () => {
           values
         )
         .then((res) => {
-          resetForm()
           console.log(res.data)
         })
         .catch((err) => {
@@ -61,8 +60,7 @@ const FormLogin = () => {
       handleSubmit()
     }
   }
-  const { handleSubmit, handleChange, handleBlur, resetForm, touched, errors } =
-    formik
+  const { handleSubmit, handleChange, handleBlur, touched, errors } = formik
 
   return (
     <>
