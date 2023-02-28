@@ -12,6 +12,7 @@ export const consultarPath = () => {
       img: imgAlumnoLogin,
       rol: 'ALUMNO',
       bg: 'from-greenDarkAlumno via-greenLightAlumno to-white',
+      path: 'alumno',
     }
     return userRol
   } else if (pathname === '/login-docente') {
@@ -19,6 +20,7 @@ export const consultarPath = () => {
       img: imgDocenteLogin,
       rol: 'DOCENTE',
       bg: 'from-blueDarkDocente via-blueLightDocente',
+      path: 'empleado',
     }
     return userRol
   } else if (pathname === '/login-tutor') {
@@ -26,6 +28,7 @@ export const consultarPath = () => {
       img: imgTutorLogin,
       rol: 'TUTOR',
       bg: 'from-orangeDarkTutor via-orangeLightTutor',
+      path: 'tutor',
     }
     return userRol
   } else {
@@ -33,6 +36,7 @@ export const consultarPath = () => {
       img: imgEscuelaLogin,
       rol: 'ESCUELA',
       bg: 'from-redDarkEscuela via-redLightEscuela',
+      path: 'escuela',
     }
     return userRol
   }

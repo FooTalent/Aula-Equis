@@ -42,7 +42,7 @@ const FormLogin = () => {
 
       axios
         .post(
-          `https://aulaequis.onrender.com/api/auth/${userRol.rol.toLowerCase()}/login`,
+          `https://aulaequis.onrender.com/api/auth/${userRol.path}/login`,
           values
         )
         .then((res) => {
