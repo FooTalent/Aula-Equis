@@ -104,99 +104,117 @@ const FormLogin = () => {
             </div>
           }
         </header>
-        <div className="mt-16 md:flex md:justify-between">
-          <div className="flex justify-between ">
-            <img className="w-40 h-48 " src={userRol.img} alt="" />
-            <p className="hidden sm:flex text-center mt-12 text-white text-2xl font-bold mr-20">
-              INICIAR SESIÓN
-            </p>
-            <p className=" sm:hidden text-center mt-12 text-white text-2xl font-bold mr-20">
-              {userRol.rol}
-            </p>
-          </div>
-          <div className="mx-auto sm:px-6">
-            <div className="mx-auto sm:px-6">
+        <div
+          className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8" /* className="mt-16 md:flex md:justify-between" */
+        >
+          <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+            <div
+              className="flex justify-between lg:col-span-2 lg:py-12" /* className="flex justify-between " */
+            >
+              <img className="w-40 h-48 " src={userRol.img} alt="" />
+              <p className="hidden sm:flex text-center mt-12 text-white text-2xl font-bold ">
+                INICIAR SESIÓN
+              </p>
+              <p className=" sm:hidden text-center text-white mt-12 text-2xl font-bold">
+                {userRol.rol}
+              </p>
+            </div>
+
+            <div
+              className=" sm:rounded-lg  p-8 sm:shadow-lg lg:col-span-3 lg:p-12" /* className="mx-auto sm:px-6" */
+            >
               <form
                 onKeyDown={handleKeyDown}
                 onSubmit={handleSubmit}
-                className="w-full flex flex-col items-center"
+                className="space-y-4"
+                /* className="w-full flex flex-col items-center" */
               >
-                <div className="flex">
-                  <div className="flex flex-col">
-                    <label className="text-[#FBFBFB] mb-2" htmlFor="email">
-                      Email:
-                    </label>
-                    <input
-                      type="email"
-                      className="w-52 h-16 rounded-2xl border-2 border-gray-600 p-4 pr-12 text-sm shadow-sm"
-                      placeholder="Correo electrónico"
-                      name="email"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    {touched.email && errors.email && (
-                      <div className="flex flex-row-reverse justify-end  text-red-500 text-sm">
-                        {errors.email}
-                        <IoIosAlert />
-                      </div>
-                    )}
+                <div className="grid grid-cols-1 gap-4 ">
+                  <div className="">
+                    <div className="">
+                      <label className="text-[#FBFBFB] mb-2" htmlFor="email">
+                        Email:
+                      </label>
+                      <input
+                        type="email"
+                        className="h-16 rounded-2xl border-2 border-gray-600  pr-12 shadow-sm w-full p-3 text-sm"
+                        /* className="w-52 h-16 rounded-2xl border-2 border-gray-600 p-4 pr-12 text-sm shadow-sm" */
+                        placeholder="Correo electrónico"
+                        name="email"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      {touched.email && errors.email && (
+                        <div className="flex text-red-500 text-sm">
+                          {errors.email}
+                          <IoIosAlert />
+                        </div>
+                      )}
+                    </div>
+                    <div className="grid justify-end -mt-9 mr-3">
+                      <IoMdMail className="h-4 text-purple-700" />
+                    </div>
                   </div>
-                  <div className=" mt-[53px] -ml-[2.5rem]">
-                    <IoMdMail className="h-4 text-purple-700" />
+                  <div className="">
+                    <div className="">
+                      <label htmlFor="password" className="text-[#FBFBFB] mb-2">
+                        Contraseña:
+                      </label>
+                      <input
+                        type={hidden}
+                        // className="w-52 h-16 rounded-2xl border-2 border-gray-600 p-4 pr-12 text-sm shadow-sm"
+                        className="h-16 rounded-2xl border-2 border-gray-600  pr-12 shadow-sm w-full p-3 text-sm"
+                        placeholder="Contraseña"
+                        name="password"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      {touched.password && errors.password && (
+                        <div className="flex text-red-500 text-sm">
+                          {errors.password}
+                          <IoIosAlert />
+                        </div>
+                      )}
+                    </div>
+                    <div
+                      onClick={typeInput}
+                      className="grid justify-end cursor-pointer -mt-9 mr-3"
+                    >
+                      {imgPass}
+                    </div>
                   </div>
                 </div>
-                <div className="flex">
-                  <div className=" flex flex-col  mt-6">
-                    <label htmlFor="password" className="text-[#FBFBFB] mb-2">
-                      Contraseña:
-                    </label>
-                    <input
-                      type={hidden}
-                      className="w-52 h-16 rounded-2xl border-2 border-gray-600 p-4 pr-12 text-sm shadow-sm"
-                      placeholder="Contraseña"
-                      name="password"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    {touched.password && errors.password && (
-                      <div className="flex flex-row-reverse justify-end text-red-500 text-sm">
-                        {errors.password}
-                        <IoIosAlert />
-                      </div>
-                    )}
-                  </div>
-                  <button onClick={typeInput} className="mt-8 -ml-6">
-                    {imgPass}
-                  </button>
-                </div>
-                <div className="flex  justify-center mt-10">
+                <div
+                  className="mt-4" /* className="flex  justify-center mt-10" */
+                >
                   <input
                     type="submit"
-                    className="block w-52 lg:w-InputLg h-14  rounded-2xl  bg-yellow-500 px-5 py-3 text-sm font-medium text-white cursor-pointer"
+                    className="h-14 rounded-2xl  bg-yellow-500 text-sm cursor-pointer inline-block w-full mt-6  px-5 py-3 font-medium text-white"
+                    // className="block w-52 lg:w-InputLg h-14  rounded-2xl  bg-yellow-500 px-5 py-3 text-sm font-medium text-white cursor-pointer"
                     value="Iniciar sesión"
                   />
                 </div>
+                <div className="relative flex justify-center mt-3">
+                  <p className="text-xs font-normal text-center" href="">
+                    ¿Olvidaste tu contraseña?{' '}
+                    <Link className="underline text-purple-700">
+                      Restablecer constraseña
+                    </Link>
+                  </p>
+                </div>
+                <div className="flex justify-center mt-6">
+                  <p className="flex flex-col text-xs font-normal text-center">
+                    Al Iniciar Sesión, estas aceptando los{' '}
+                    <Link className="underline text-purple-700">
+                      Términos y condiciones
+                    </Link>{' '}
+                    y nuestras políticas sobre{' '}
+                    <Link className="underline text-purple-700">
+                      Protección de Datos.
+                    </Link>
+                  </p>
+                </div>
               </form>
-              <div className="relative flex justify-center mt-3">
-                <p className="text-xs font-normal text-center" href="">
-                  ¿Olvidaste tu contraseña?{' '}
-                  <Link className="underline text-purple-700">
-                    Restablecer constraseña
-                  </Link>
-                </p>
-              </div>
-              <div className="flex justify-center mt-6">
-                <p className="flex flex-col text-xs font-normal text-center">
-                  Al Iniciar Sesión, estas aceptando los{' '}
-                  <Link className="underline text-purple-700">
-                    Términos y condiciones
-                  </Link>{' '}
-                  y nuestras políticas sobre{' '}
-                  <Link className="underline text-purple-700">
-                    Protección de Datos.
-                  </Link>
-                </p>
-              </div>
             </div>
           </div>
         </div>
