@@ -13,7 +13,7 @@ module.exports = {
         redDarkEscuela: 'rgba(208, 89, 96, 1)',
         redLightEscuela: 'rgba(208, 89, 96, 0.0446)',
         colorDarkLanding: ' rgba(255, 197, 98, 1)',
-        colorLightLanding: 'rgba(255, 197, 98, 0.182)',
+        colorLightLanding: 'rgba(255, 197, 98, 0.182)'
       },
       width: {
         formLoginLg: '38.125em',

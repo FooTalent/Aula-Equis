@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
+import { Home } from '../aula-equis/components/Home/Home'
+
 import FormLogin from '../aula-equis/pages/formLogin/FormLogin'
 import { Landing } from '../aula-equis/pages/landing/Landing'
 export const AppRouter = () => {
@@ -9,6 +11,7 @@ export const AppRouter = () => {
       <Route path="/login-docente" element={<FormLogin />} />
       <Route path="/login-tutor" element={<FormLogin />} />
       <Route path="/login-escuela" element={<FormLogin />} />
+      <Route path="/home" element={<Home />} />
     </Routes>
   )
 }
