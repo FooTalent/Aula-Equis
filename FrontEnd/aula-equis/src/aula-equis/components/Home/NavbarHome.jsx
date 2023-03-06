@@ -3,7 +3,7 @@ export const NavbarHome = () => {
     <nav className="flex justify-between items-center mx-5 sm:mx-20">
       <div>
         <img
-          className=" w-12 sm:w-20"
+          className=" w-12 sm:w-20 "
           src="https://tse4.mm.bing.net/th?id=OIP.zxWh6AJr3Hk3RcSFxtXFWAHaHa&pid=Api&P=0"
           alt=""
         />

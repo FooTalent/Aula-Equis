@@ -5,8 +5,8 @@ export const Landing = () => {
     <div className="h-screen">
       <div className="bg-gradient-to-br from-amber-500 via-orange-100 to-white min-h-full ">
         <Navbar />
-        <div className=" items-center lg:mx-56 md:mx-24 xl:mx-20 2xl:mx-24 justify-center flex text-left sm:text-center mt-16 px-6 md:px-0  xl:text-left xl:mt-48 xl:gap-9 2xl:gap-4">
-          <div className="2xl:py-20 2xl:pr-12">
+        <div className=" items-center lg:mx-56 md:mx-24 xl:mx-20 2xl:ml-36 2xl:mr-24  justify-center flex text-left sm:text-center mt-16 px-6 md:px-0  xl:text-left xl:mt-48 xl:gap-9 2xl:gap-0">
+          <div className="2xl:py-20 2xl:pr-6">
             <h2 className="font-semibold sm:text-left  xl:mb-5 sm:text-4xl xl:text-5xl">
               Gestión digital de escuelas y entidades educativas
             </h2>
@@ -23,7 +23,11 @@ export const Landing = () => {
               Probar Demo
             </button>
           </div>
-          <img src={landig} alt="" className="hidden xl:inline xl:w-1/2 2xl:w-10/12" />
+          <img
+            src={landig}
+            alt=""
+            className="hidden xl:inline xl:w-1/2 2xl:w-10/12"
+          />
         </div>
       </div>
     </div>
