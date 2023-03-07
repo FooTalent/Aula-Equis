@@ -11,6 +11,7 @@ export const AppRouter = () => {
       <Route path="/login-tutor" element={<FormLogin />} />
       <Route path="/login-escuela" element={<FormLogin />} />
       <Route path="/login-register" element={<FormRegister />} />
+      <Route path="/form-register" element={<FormRegister />} />
     </Routes>
   )
 }
