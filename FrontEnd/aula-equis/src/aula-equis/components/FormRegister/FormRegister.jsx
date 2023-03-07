@@ -27,7 +27,7 @@ function CuentaForm () {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className='flex flex-col items-center w-80 m-auto rounded-lg mt-9 bg-yellow-400 shadow'>
+        <Form className='flex flex-col items-center w-80 m-auto rounded-lg my-9 bg-yellow-400 shadow'>
           <div className='w-3/4 mt-3'>
             <h2 className='text-lg font-bold mb-1'>Cuenta</h2>
             <div className="flex flex-col">

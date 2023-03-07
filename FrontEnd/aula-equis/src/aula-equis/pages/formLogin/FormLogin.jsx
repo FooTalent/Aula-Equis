@@ -27,7 +27,7 @@ const FormLogin = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
-      password: '',
+      password: ''
     },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -35,7 +35,7 @@ const FormLogin = () => {
         .required('El correo electrónico es requerido'),
       password: Yup.string()
         .required('La contraseña es requerida')
-        .min(3, 'La contraseña debe tener al menos 3 caracteres'),
+        .min(3, 'La contraseña debe tener al menos 3 caracteres')
     }),
     onSubmit: (values) => {
       console.log(values)
@@ -51,7 +51,7 @@ const FormLogin = () => {
         .catch((err) => {
           console.log(err)
         })
-    },
+    }
   })
 
   const handleKeyDown = (e) => {
