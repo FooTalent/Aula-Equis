@@ -27,7 +27,7 @@ function CuentaForm () {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className='flex flex-col items-center w-80 m-auto rounded-lg my-9 bg-yellow-400 shadow'>
+        <Form className='flex flex-col items-center w-80 m-auto rounded-lg my-9 bg-[#FFC562] shadow'>
           <div className='w-3/4 mt-3'>
             <h2 className='text-lg font-bold mb-1'>Cuenta</h2>
             <div className="flex flex-col">
@@ -64,7 +64,7 @@ function CuentaForm () {
               <label htmlFor="numeroTel" className='text-xs font-bold mt-1'>Teléfono</label>
               <div>
                 <Field type="text" id="numeroTel" name="numeroTel" placeholder="+54" className="w-8 pl-1 rounded-md text-xs py-1.5 px-1"/> -
-                <Field type="text" id="numeroTel" name="numeroTel" placeholder="011 2545 545" className="pr-3 pl-1 py-1.5 w-32 ml-2 text-xs rounded-md "/>
+                <Field type="text" id="numeroTel" name="numeroTel" placeholder="011 2545 545" className="pr-3 pl-1 py-1.5 w-24 ml-2 text-xs rounded-md "/>
               </div>
             </div>
           </div>
