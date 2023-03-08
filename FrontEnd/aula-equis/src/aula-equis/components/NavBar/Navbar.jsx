@@ -3,42 +3,31 @@ import logo from '../assets/logo.svg'
 const Navbar = () => {
   return (
     <>
-      <header aria-label="Site Header">
-        <div className="mx-auto flex h-16 max-w-screen-xxl items-center justify-between px-4">
-          <div className="flex w-0 flex-1 ">
-            <Link className="rounded-full p-2 text-gray-600" type="button">
-              <span className="sr-only">Account</span>
-              <img src={logo} height="50px" width="50px" alt="" />
-            </Link>
-          </div>
-          <nav
-            aria-label="Site Nav"
-            className="hidden items-center justify-end gap-8 mr-10 text-sm font-medium lg:flex lg:w-0 lg:flex-1"
-          >
-            <Link className="text-blue-800 text-lg">Home</Link>
-            <Link className="text-blue-800 text-lg">Nosotros</Link>
-            <Link className="text-blue-800 text-lg">Contactanos</Link>
-          </nav>
+      <header aria-label="Site Header " className="pt-10">
+        <div className="flex items-center justify-between xl:justify-items-stretch px-4 md:pl-14 lg:pl-16">
+          <Link to="/">
+            <img src={logo} className="w-24 md:w-44 xl:w-48" alt="" />
+          </Link>
+          <div className="flex items-center">
+            <nav
+              aria-label="Site Nav"
+              className="hidden xl:flex uppercase xl:justify-evenly xl:gap-16 xl:font-semibold xl:mr-20"
+            >
+              <Link>Home</Link>
+              <Link>Nosotros</Link>
+              <Link>Contactanos</Link>
+            </nav>
 
-          <div className=" items-center mr-5 gap-4 flex text-lg">
-            <Link className="rounded-lg w-32 bg-orange-400 px-5 py-2 text-xs md:text-lg text-center font-medium text-white md:w-48">
+            <Link className="xl:w-48 lg:w-36 rounded-lg bg-[#E59D1C] text-white md:mr-11 text-center cursor-pointer text-sm px-6 py-2 ">
               Iniciar sesión
             </Link>
           </div>
         </div>
-        <div className=" border-gray-100 lg:hidden">
-          <nav className="flex items-center justify-center overflow-x-auto p-4 text-sm font-medium">
-            <Link className="flex-shrink-0 pl-4 text-blue-800 text-xs md:text-lg">
-              Home
-            </Link>
-            <Link className="flex-shrink-0 pl-4 text-blue-800 text-xs md:text-lg">
-              Nosotros
-            </Link>
-            <Link className="flex-shrink-0 pl-4 text-blue-800 text-xs md:text-lg">
-              Contactanos
-            </Link>
-          </nav>
-        </div>
+        <nav className="border-gray-100 xl:hidden flex text-[#114A7C] uppercase justify-evenly font-semibold pl-6 pt-6 md:pl-14 md:text-left md:justify-start md:gap-10 lg:pl-28 text-sm">
+          <Link>Home</Link>
+          <Link>Nosotros</Link>
+          <Link>Contactanos</Link>
+        </nav>
       </header>
     </>
   )
