@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import FormRegister from '../aula-equis/components/FormRegister/FormRegister'
 import { Home } from '../aula-equis/components/Home/Home'
-import { Home } from '../aula-equis/components/Home/Home'
 import FormLogin from '../aula-equis/pages/formLogin/FormLogin'
 import { Landing } from '../aula-equis/pages/landing/Landing'
 
