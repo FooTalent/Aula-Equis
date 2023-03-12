@@ -61,6 +61,10 @@ const FormLogin = () => {
     }
   }
   const { handleSubmit, handleChange, handleBlur, touched, errors } = formik
+  const [modalTC, setOpenModalTC] = useState(false)
+  const openModal = () => {
+    setOpenModalTC(!modalTC)
+  }
 
   return (
     <>
@@ -198,24 +202,39 @@ const FormLogin = () => {
                 <div className="flex justify-center mt-1">
                   <p className="flex flex-col md:block text-xs font-normal text-center">
                     Al Iniciar Sesión, estas aceptando los{' '}
-                    <Link className="underline text-purple-700">
+                    <Link
+                      onClick={openModal}
+                      className="underline text-purple-700"
+                    >
                       Términos y condiciones
                     </Link>{' '}
                     y nuestras políticas sobre{' '}
-                    <Link className="underline text-purple-700">
+                    <Link
+                      onClick={openModal}
+                      className="underline text-purple-700"
+                    >
                       Protección de Datos.
                     </Link>
                   </p>
                 </div>
               </form>
+                <div className={` ${modalTC ? ' w-full h-full bg-white fixed left-0 top-0 bottom-0 right-0 flex flex-col justify-center items-center' : ' hidden'}`}>
+                  <p className=' font-bold text-2xl w-96'>
+                    Términos y condiciones de uso y proteccion de datos(parte
+                    legal)
+                  </p>
+                  <button onClick={openModal} className='mt-5 bg-orange-500 text-white w-96 rounded-xl p-2'>
+                    Volver
+                  </button>
+                </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className=' w-full h-full absolute top-0 left-0 right-0 bottom-0 m-auto bg-white'>
+      {/*  <div className=' w-full h-full absolute top-0 left-0 right-0 bottom-0 m-auto bg-white'>
         modal
-      </div>
+      </div> */}
     </>
   )
 }
