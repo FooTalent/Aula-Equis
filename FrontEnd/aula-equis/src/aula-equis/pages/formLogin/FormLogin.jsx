@@ -87,7 +87,6 @@ const FormLogin = () => {
               </nav>
             }
 
-
             <div className="items-center text-xs mt-6 sm:mt-12 w-24 h-8 flex text-center justify-center rounded-lg bg-indigo-300   md:text-xl text-white md:w-40 md:h-12 lg:mt-14 xl:mt-[61px] ">
 
               <Link to={'/home'} className="px-8 py-2  md:py-3 md:px-20">
