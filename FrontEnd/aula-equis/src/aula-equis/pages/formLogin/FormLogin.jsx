@@ -66,7 +66,6 @@ const FormLogin = () => {
     <>
       <div className={`bg-gradient-to-b ${userRol.bg}`}>
         <header>
-
           <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-12 ">
             <div className="mt-6  sm:mt-12 xl:mt-[61px]">
               <Link className="">
@@ -78,9 +77,7 @@ const FormLogin = () => {
               </Link>
             </div>
             {
-
               <nav className="hidden items-center justify-center gap-8 text-6xl font-medium ">
-
                 <p className="text-white text-6xl" href="">
                   {userRol.rol}
                 </p>
@@ -88,20 +85,17 @@ const FormLogin = () => {
             }
 
             <div className="items-center text-xs mt-6 sm:mt-12 w-24 h-8 flex text-center justify-center rounded-lg bg-indigo-300   md:text-xl text-white md:w-40 md:h-12 lg:mt-14 xl:mt-[61px] ">
-
               <Link to={'/home'} className="px-8 py-2  md:py-3 md:px-20">
                 Volver
               </Link>
             </div>
           </div>
-
         </header>
         <div className="mx-auto max-w-screen-xl  pl-0 pr-4 md:pl-0 sm:pr-6 sm:pl-0 xl:ml-0 xl:max-w-full ">
           {
-            <div className="hidden md:flex md:justify-end md:mr-[15%] md:mb-20 md:mt-36 xl:mb-4 xl:mt-24 ">
+            <div className="hidden md:flex md:justify-end md:mr-[15%] md:mb-20 md:mt-36 lg:mb-0 xl:mb-4 xl:mt-24 ">
               <nav className="flex items-center justify-center font-medium">
                 <a className="text-white text-4xl md:text-[64px]" href="">
-
                   {userRol.rol}
                 </a>
               </nav>
@@ -109,7 +103,7 @@ const FormLogin = () => {
           }
 
           <div className="grid grid-cols-1 gap-x-16 md:gap-x-0 gap-y-8 md:flex md:items-center md:justify-between lg:grid-cols-5">
-            <div className="flex gap-[153px] lg:col-span-2 lg:py-12 sm:mt-16">
+            <div className="flex gap-[30px] sm:gap-[120px] lg:col-span-2 lg:py-0 sm:mt-16">
               <img
                 className="w-40 h-48 md:w-imgLoginMd md:h-imgLoginMd lg:w-imgLoginLg lg:h-imgLoginLg"
                 src={userRol.img}
@@ -122,7 +116,7 @@ const FormLogin = () => {
             </div>
 
             <div
-              className={`flex justify-center sm:rounded-lg md:mr-20 xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
+              className={`flex justify-center sm:rounded-lg  xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
             >
               <form
                 onKeyDown={handleKeyDown}
@@ -152,7 +146,6 @@ const FormLogin = () => {
                     </div>
                     {touched.email && errors.email && (
                       <div className="flex flex-row-reverse w-[11.5rem] sm:w-[13.5rem] mt-5 text-red-500 text-xs sm:text-sm">
-
                         {errors.email}
                         <IoIosAlert />
                       </div>
@@ -181,13 +174,11 @@ const FormLogin = () => {
                     </div>
                     {touched.password && errors.password && (
                       <div className="flex flex-row-reverse w-[15.5rem] sm:w-[19.5rem] text-red-500 mt-5 text-xs sm:text-sm">
-
                         {errors.password}
                         <IoIosAlert />
                       </div>
                     )}
                   </div>
-
                 </div>
                 <div className="mt-2">
                   <input
@@ -217,7 +208,6 @@ const FormLogin = () => {
                   </p>
                 </div>
               </form>
-
             </div>
           </div>
         </div>
