@@ -93,7 +93,7 @@ const FormLogin = () => {
         </header>
         <div className="mx-auto max-w-screen-xl  pl-0 pr-4 md:pl-0 sm:pr-6 sm:pl-0 xl:ml-0 xl:max-w-full ">
           {
-            <div className="hidden md:flex md:justify-end md:mr-[15%] md:mb-20 md:mt-36 xl:mb-4 xl:mt-24 ">
+            <div className="hidden md:flex md:justify-end md:mr-[15%] md:mb-20 md:mt-36 lg:mb-0 xl:mb-4 xl:mt-24 ">
               <nav className="flex items-center justify-center font-medium">
                 <a className="text-white text-4xl md:text-[64px]" href="">
                   {userRol.rol}
@@ -101,8 +101,9 @@ const FormLogin = () => {
               </nav>
             </div>
           }
+
           <div className="grid grid-cols-1 gap-x-16 md:gap-x-0 gap-y-8 md:flex md:items-center md:justify-between lg:grid-cols-5">
-            <div className="flex gap-[153px] lg:col-span-2 lg:py-12 sm:mt-16">
+            <div className="flex gap-[30px] mr-48 sm:gap-[120px] lg:col-span-2 lg:py-0 sm:mt-16">
               <img
                 className="w-40 h-48 md:w-imgLoginMd md:h-imgLoginMd lg:w-imgLoginLg lg:h-imgLoginLg"
                 src={userRol.img}
@@ -115,7 +116,7 @@ const FormLogin = () => {
             </div>
 
             <div
-              className={`flex justify-center sm:rounded-lg md:mr-20 xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`} /* className="mx-auto sm:px-6" */
+              className={`flex justify-center sm:rounded-lg  xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
             >
               <form
                 onKeyDown={handleKeyDown}
@@ -150,6 +151,7 @@ const FormLogin = () => {
                       </div>
                     )}
                   </div>
+
                   <div className="">
                     <div className="">
                       <label htmlFor="password" className="text-[#FBFBFB] mb-2">

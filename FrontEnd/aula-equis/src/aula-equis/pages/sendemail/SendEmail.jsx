@@ -85,7 +85,7 @@ const SendEmail = () => {
           }
 
           <div className="grid grid-cols-1 gap-x-16 md:gap-x-0 gap-y-8 md:flex md:items-center md:justify-between lg:grid-cols-5">
-            <div className="flex gap-[30px] sm:gap-[120px] lg:col-span-2 lg:py-0 sm:mt-16">
+            <div className="flex gap-[30px] mr-48 sm:gap-[120px] lg:col-span-2 lg:py-0 sm:mt-16">
               <img
                 className="w-40 h-48 md:w-imgLoginMd md:h-imgLoginMd lg:w-imgLoginLg lg:h-imgLoginLg"
                 src={userRol.img}
