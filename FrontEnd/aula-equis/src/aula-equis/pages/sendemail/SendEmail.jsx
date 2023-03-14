@@ -1,7 +1,6 @@
-import { IoIosAlert, IoIosLock, IoIosUnlock, IoMdMail } from 'react-icons/Io'
+import { IoIosAlert, IoMdMail } from 'react-icons/io'
 import logo from '../../components/assets/logo.svg'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 import { consultarPath } from '../../../helpers'
 import axios from 'axios'
 import { useFormik } from 'formik'
