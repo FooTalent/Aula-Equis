@@ -1,9 +1,7 @@
+import { AppRouter } from './router/AppRouter'
+
 function App () {
-  return (
-    <div className="bg-red-800">
-      <p>Hola</p>
-    </div>
-  )
+  return <AppRouter />
 }
 
 export default App
