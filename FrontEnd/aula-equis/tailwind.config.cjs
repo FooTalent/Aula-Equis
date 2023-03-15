@@ -20,21 +20,20 @@ module.exports = {
         formLoginLg: '38.125em',
 
         formLoginMd: '27.125rem',
-        imgLoginLg: '43rem',
+        imgLoginLg: '27rem',
         imgLoginMd: '26.625rem',
 
         logoLoginLg: '18.904em',
-        InputLg: '25.188em',
+        InputLg: '25.188em'
       },
       height: {
         formLoginLg: '33.438em',
 
         formLoginMd: '33.438rem',
-        imgLoginLg: '44em',
-        imgLoginMd: '26.5rem',
-
-      },
-    },
+        imgLoginLg: '40em',
+        imgLoginMd: '26.5rem'
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }

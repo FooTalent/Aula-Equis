@@ -6,7 +6,6 @@ export const Home = () => {
     <div className="h-screen">
       <div className="bg-gradient-to-br from-amber-500 via-orange-100 to-white min-h-full grid">
         <NavbarHome />
-
         <div className="">
           <p className="text-center mb-7 md:mb-12  text-xl md:text-4xl font-semibold text-[#26036E] ">
             ¡Te damos la bienvenida!
