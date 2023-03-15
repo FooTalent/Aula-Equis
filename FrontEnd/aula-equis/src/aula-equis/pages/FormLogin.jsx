@@ -1,8 +1,8 @@
 import { IoIosAlert, IoIosLock, IoIosUnlock, IoMdMail } from 'react-icons/Io'
-import logo from '../../components/assets/logo.svg'
+import logo from '../components/assets/logo.svg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { consultarPath } from '../../../helpers'
+import { consultarPath } from '../../helpers'
 import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -27,7 +27,7 @@ const FormLogin = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
-      password: ''
+      password: '',
     },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -35,7 +35,7 @@ const FormLogin = () => {
         .required('El correo electrónico es requerido'),
       password: Yup.string()
         .required('La contraseña es requerida')
-        .min(3, 'La contraseña debe tener al menos 3 caracteres')
+        .min(3, 'La contraseña debe tener al menos 3 caracteres'),
     }),
     onSubmit: (values) => {
       console.log(values)
@@ -51,7 +51,7 @@ const FormLogin = () => {
         .catch((err) => {
           console.log(err)
         })
-    }
+    },
   })
 
   const handleKeyDown = (e) => {
@@ -66,7 +66,6 @@ const FormLogin = () => {
     <>
       <div className={`bg-gradient-to-b ${userRol.bg}`}>
         <header>
-
           <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-12 ">
             <div className="mt-6  sm:mt-12 xl:mt-[61px]">
               <Link className="">
@@ -78,31 +77,25 @@ const FormLogin = () => {
               </Link>
             </div>
             {
-
               <nav className="hidden items-center justify-center gap-8 text-6xl font-medium ">
-
                 <p className="text-white text-6xl" href="">
                   {userRol.rol}
                 </p>
               </nav>
             }
 
-
             <div className="items-center text-xs mt-6 sm:mt-12 w-24 h-8 flex text-center justify-center rounded-lg bg-indigo-300   md:text-xl text-white md:w-40 md:h-12 lg:mt-14 xl:mt-[61px] ">
-
               <Link to={'/home'} className="px-8 py-2  md:py-3 md:px-20">
                 Volver
               </Link>
             </div>
           </div>
-
         </header>
         <div className="mx-auto max-w-screen-xl  pl-0 pr-4 md:pl-0 sm:pr-6 sm:pl-0 xl:ml-0 xl:max-w-full ">
           {
             <div className="hidden md:flex md:justify-end md:mr-[15%] md:mb-20 md:mt-36 xl:mb-4 xl:mt-24 ">
               <nav className="flex items-center justify-center font-medium">
                 <a className="text-white text-4xl md:text-[64px]" href="">
-
                   {userRol.rol}
                 </a>
               </nav>
@@ -153,7 +146,6 @@ const FormLogin = () => {
                     </div>
                     {touched.email && errors.email && (
                       <div className="flex flex-row-reverse w-[11.5rem] sm:w-[13.5rem] mt-5 text-red-500 text-xs sm:text-sm">
-
                         {errors.email}
                         <IoIosAlert />
                       </div>
@@ -182,13 +174,11 @@ const FormLogin = () => {
                     </div>
                     {touched.password && errors.password && (
                       <div className="flex flex-row-reverse w-[15.5rem] sm:w-[19.5rem] text-red-500 mt-5 text-xs sm:text-sm">
-
                         {errors.password}
                         <IoIosAlert />
                       </div>
                     )}
                   </div>
-
                 </div>
                 <div className="mt-2">
                   <input
@@ -218,7 +208,6 @@ const FormLogin = () => {
                   </p>
                 </div>
               </form>
-
             </div>
           </div>
         </div>

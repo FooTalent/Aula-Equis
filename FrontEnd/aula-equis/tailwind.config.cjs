@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         greenDarkAlumno: 'rgba(0, 172, 107, 1)',
+       
         greenLightAlumno: 'rgba(0, 172, 107, 0.239)',
         blueDarkDocente: 'rgba(28, 67, 150, 1)',
         blueLightDocente: 'rgba(28, 67, 150, 0.239)',
