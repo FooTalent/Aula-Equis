@@ -6,20 +6,19 @@ import imgFormRegister from '../assets/imgFormRegister.svg'
 function CuentaForm () {
   const validationRegister = Yup.object({
     email1: Yup.string()
-      .email(<p className="text-red-600">Formato de email invalido</p>)
-      .required(<p className="text-red-600">Campo requerido</p>),
+      .email(<p className="text-red-600 text-xs">Formato de email invalido</p>)
+      .required(<p className="text-red-600 text-xs">Campo requerido</p>),
     email2: Yup.string()
-      .email(<p className="text-red-600">Formato de email invalido</p>)
-      .required(<p className="text-red-600">Campo requerido</p>),
+      .email(<p className="text-red-600 text-xs">Formato de email invalido</p>)
+      .required(<p className="text-red-600 text-xs">Campo requerido</p>),
     password1: Yup.string().required(
+    <p className="text-red-600 text-xs">Campo requerido</p>).min(8, 'ingresa 8 caracteres como mínimo'),
+    password2: Yup.string().oneOf([Yup.ref('password1'), null], 'Las contraseñas deben coincidir').required(
+    <p className="text-red-600 text-xs">Campo requerido</p>),
+    colegio: Yup.string().required(<p className="text-red-600">Campo requerido</p>),
+    direccion: Yup.string().required(<p className="text-red-600">Campo requerido</p>
     ),
-    password2: Yup.string().required(
-    ),
-    colegio: Yup.string().required(
-    ),
-    direccion: Yup.string().required(
-    ),
-    ciudad: Yup.string().required(
+    ciudad: Yup.string().required(<p className="text-red-600">Campo requerido</p>
     )
   })
 
@@ -74,7 +73,6 @@ function CuentaForm () {
                 <div className="flex flex-col">
                   <label htmlFor="email1" className="flex text-xs font-bold mt-1">
                     Email*
-                    <ErrorMessage name='email1' className='ml-3'/>
                   </label>
                   <Field
                     type="email"
@@ -83,11 +81,11 @@ function CuentaForm () {
                     placeholder="JC.Director@correo.com"
                     className="w-100 pl-1 rounded-md text-xs py-1.5"
                   />
+                  <ErrorMessage name='email1' className='text-xs text-red-600 '/>
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="email2" className="flex text-xs font-bold mt-1">
-                    Email*
-                    <ErrorMessage name="email2" component="div" className='ml-3'/>
+                    Confirma Email*
                   </label>
                   <Field
                     type="email"
@@ -96,6 +94,7 @@ function CuentaForm () {
                     placeholder="Repita el correo"
                     className="w-100 pl-1 rounded-md text-xs py-1.5"
                   />
+                  <ErrorMessage name="email2" component="div" className='text-red-600 text-xs'/>
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="password1" className="text-xs font-bold mt-1">
@@ -108,10 +107,11 @@ function CuentaForm () {
                     placeholder="Min 8 caracteres"
                     className="w-100 pl-1 rounded-md text-xs py-1.5"
                   />
+                  <ErrorMessage name="password1" component="div" className='text-xs text-red-600'/>
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="password2" className="text-xs font-bold mt-1">
-                    Contraseña*
+                    Verificar Contraseña*
                   </label>
                   <Field
                     type="password"
@@ -120,7 +120,7 @@ function CuentaForm () {
                     placeholder="Repita la contraseña"
                     className="w-100 pl-1 rounded-md text-xs py-1.5"
                   />
-                  <ErrorMessage name="password2" component="div" />
+                  <ErrorMessage name="password2" component="div" className='text-xs text-red-600'/>
                 </div>
               </div>
 
