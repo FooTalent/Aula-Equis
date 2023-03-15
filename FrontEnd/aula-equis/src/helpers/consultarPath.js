@@ -9,12 +9,11 @@ export const consultarPath = () => {
   let userRol = {}
 
   if (pathname === '/login-alumno' || pathname === '/login-send-email-alumno') {
-
     userRol = {
       img: imgAlumnoLogin,
       rol: 'ALUMNO',
       bg: 'from-greenDarkAlumno via-greenLightAlumno to-white',
-      path: 'alumno',
+      path: 'alumno'
     }
     return userRol
   } else if (
@@ -27,7 +26,7 @@ export const consultarPath = () => {
       img: imgDocenteLogin,
       rol: 'DOCENTE',
       bg: 'from-blueDarkDocente via-blueLightDocente',
-      path: 'empleado',
+      path: 'empleado'
     }
     return userRol
   } else if (
@@ -40,7 +39,7 @@ export const consultarPath = () => {
       img: imgTutorLogin,
       rol: 'TUTOR',
       bg: 'from-orangeDarkTutor via-orangeLightTutor',
-      path: 'tutor',
+      path: 'tutor'
     }
     return userRol
   } else if (
@@ -53,7 +52,7 @@ export const consultarPath = () => {
       img: imgEscuelaLogin,
       rol: 'ESCUELA',
       bg: 'from-redDarkEscuela via-redLightEscuela',
-      path: 'escuela',
+      path: 'escuela'
     }
     return userRol
   }

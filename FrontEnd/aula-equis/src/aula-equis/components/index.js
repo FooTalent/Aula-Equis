@@ -1,2 +1,2 @@
-export { Navbar, Button } from './NavBar/Navbar'
-export * from './Home'
+// export { Navbar, Button } from './NavBar/Navbar'
+export * from './CardsHome'
