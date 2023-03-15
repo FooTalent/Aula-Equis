@@ -8,6 +8,7 @@ import SendEmail from '../aula-equis/pages/sendemail/SendEmail'
 export const AppRouter = () => {
   return (
     <Routes>
+
       <Route exact path="/login-alumno" element={<FormLogin />} />
       <Route exact path="/login-docente" element={<FormLogin />} />
       <Route exact path="/login-tutor" element={<FormLogin />} />
@@ -24,6 +25,7 @@ export const AppRouter = () => {
       <Route exact path="/form-register" element={<FormRegister />} />
       <Route exact path="/home" element={<Home />} />
       <Route exact path="/" element={<Landing />} />
+
     </Routes>
   )
 }
