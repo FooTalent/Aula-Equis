@@ -141,8 +141,6 @@ const SendEmail = () => {
               </form>
               {/* <form
 
-              <form
-
                 onKeyDown={handleKeyDown}
                 onSubmit={handleSubmit}
                 className=" md:h-[26.5rem]"
@@ -214,8 +212,6 @@ const SendEmail = () => {
                 </div>
 
               </form> */}
-
-              </form>
 
             </div>
           </div>
