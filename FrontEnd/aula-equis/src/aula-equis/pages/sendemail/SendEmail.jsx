@@ -1,4 +1,3 @@
-
 import { IoIosAlert, IoMdMail } from 'react-icons/io'
 import logo from '../../components/assets/logo.svg'
 import { Link } from 'react-router-dom'
@@ -100,7 +99,50 @@ const SendEmail = () => {
             <div
               className={`flex justify-center sm:rounded-lg  xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
             >
+
+              <form className="mx-24 font-bold text-white">
+                <h3 className="text-center   text-2xl">
+                  Restablecer Contraseña
+                </h3>
+                <div className="">
+                  <label htmlFor="pass1" className="pl-2 mb-2">
+                    Nueva contraseña
+                  </label>
+                  <input
+                    type="password"
+                    id="pass1"
+                    placeholder="Contraseña"
+                    className="mb-3 font-normal pl-3 py-3 w-full rounded-xl"
+                  />
+                  <ul className="pl-5 text-[#303030] font-medium text-sm focus:h-0">
+                    <legend className=" ">
+                      Por razones de seguridad tu contraseña debe contener:
+                    </legend>
+                    <li>-Al menos 1 mayúscula</li>
+                    <li>-Al menos 1 numero</li>
+                    <li>-Al menos 8 caracteres</li>
+                  </ul>
+                </div>
+                <div>
+                  <label htmlFor="pass2">Repetir nueva contraseña</label>
+                  <input
+                    type="password"
+                    id="pass2"
+                    placeholder="Contraseña"
+                    className="mb-3 font-normal pl-3 py-3 w-full rounded-xl"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full rounded-xl bg-[#684D82]"
+                >
+                  Restablecer
+                </button>
+              </form>
+              {/* <form
+
               <form
+
                 onKeyDown={handleKeyDown}
                 onSubmit={handleSubmit}
                 className=" md:h-[26.5rem]"
@@ -170,7 +212,11 @@ const SendEmail = () => {
                     </Link>
                   </p>
                 </div>
+
+              </form> */}
+
               </form>
+
             </div>
           </div>
         </div>

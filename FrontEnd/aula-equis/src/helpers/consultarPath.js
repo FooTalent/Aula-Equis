@@ -7,7 +7,9 @@ import { useLocation } from 'react-router-dom'
 export const consultarPath = () => {
   const { pathname } = useLocation()
   let userRol = {}
+
   if (pathname === '/login-alumno' || pathname === '/login-send-email-alumno') {
+
     userRol = {
       img: imgAlumnoLogin,
       rol: 'ALUMNO',
@@ -17,7 +19,9 @@ export const consultarPath = () => {
     return userRol
   } else if (
     pathname === '/login-docente' ||
+
     pathname === '/login-send-email-docente'
+
   ) {
     userRol = {
       img: imgDocenteLogin,
@@ -27,8 +31,10 @@ export const consultarPath = () => {
     }
     return userRol
   } else if (
-    pathname === '/login-tutor' ||
-    pathname === '/login-send-email-tutor'
+
+    pathname === '/login-send-email-tutor' ||
+    pathname === '/password-recovery-tutor'
+
   ) {
     userRol = {
       img: imgTutorLogin,
@@ -39,7 +45,9 @@ export const consultarPath = () => {
     return userRol
   } else if (
     pathname === '/login-escuela' ||
+
     pathname === '/login-send-email-escuela'
+
   ) {
     userRol = {
       img: imgEscuelaLogin,
