@@ -19,8 +19,6 @@ const Navbar = () => {
               <Link>Nosotros</Link>
               <Link>Contactanos</Link>
             </nav>
-
-
             <Link
               to="/home"
               className="xl:w-48 lg:w-36 rounded-lg bg-[#E59D1C] text-white md:mr-11 text-center cursor-pointer text-sm px-6 py-2 "

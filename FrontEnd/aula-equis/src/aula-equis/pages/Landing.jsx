@@ -1,5 +1,5 @@
-import landig from '../../assets/landing.svg'
-import Navbar from '../../components/NavBar/Navbar'
+import landig from '../assets/landing.svg'
+import Navbar from '../components/NavBar/Navbar'
 export const Landing = () => {
   return (
     <div className="h-screen">

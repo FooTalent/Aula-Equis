@@ -1,8 +1,8 @@
 import { IoIosAlert, IoIosLock, IoIosUnlock, IoMdMail } from 'react-icons/io'
-import logo from '../../components/assets/logo.svg'
+import logo from '../components/assets/logo.svg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { consultarPath } from '../../../helpers'
+import { consultarPath } from '../../helpers'
 import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -27,7 +27,7 @@ const FormLogin = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
-      password: '',
+      password: ''
     },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -35,7 +35,7 @@ const FormLogin = () => {
         .required('El correo electrónico es requerido'),
       password: Yup.string()
         .required('La contraseña es requerida')
-        .min(3, 'La contraseña debe tener al menos 3 caracteres'),
+        .min(3, 'La contraseña debe tener al menos 3 caracteres')
     }),
     onSubmit: (values) => {
       console.log(values)
@@ -51,7 +51,7 @@ const FormLogin = () => {
         .catch((err) => {
           console.log(err)
         })
-    },
+    }
   })
 
   const handleKeyDown = (e) => {
@@ -61,10 +61,6 @@ const FormLogin = () => {
     }
   }
   const { handleSubmit, handleChange, handleBlur, touched, errors } = formik
-  const [modalTC, setOpenModalTC] = useState(false)
-  const openModal = () => {
-    setOpenModalTC(!modalTC)
-  }
 
   return (
     <>
@@ -97,7 +93,7 @@ const FormLogin = () => {
         </header>
         <div className="mx-auto max-w-screen-xl  pl-0 pr-4 md:pl-0 sm:pr-6 sm:pl-0 xl:ml-0 xl:max-w-full ">
           {
-            <div className="hidden md:flex md:justify-end md:mr-[15%] md:mb-20 md:mt-36 lg:mb-0 xl:mb-4 xl:mt-24 ">
+            <div className="hidden md:flex md:justify-end md:mr-[15%] md:mb-20 md:mt-36 xl:mb-4 xl:mt-24 ">
               <nav className="flex items-center justify-center font-medium">
                 <a className="text-white text-4xl md:text-[64px]" href="">
                   {userRol.rol}
@@ -107,7 +103,7 @@ const FormLogin = () => {
           }
 
           <div className="grid grid-cols-1 gap-x-16 md:gap-x-0 gap-y-8 md:flex md:items-center md:justify-between lg:grid-cols-5">
-            <div className="flex gap-[30px] mr-48 sm:gap-[120px] lg:col-span-2 lg:py-0 sm:mt-16">
+            <div className="flex gap-[153px] lg:col-span-2 lg:py-12 sm:mt-16">
               <img
                 className="w-40 h-48 md:w-imgLoginMd md:h-imgLoginMd lg:w-imgLoginLg lg:h-imgLoginLg"
                 src={userRol.img}
@@ -120,7 +116,7 @@ const FormLogin = () => {
             </div>
 
             <div
-              className={`flex justify-center sm:rounded-lg  xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
+              className={`flex justify-center sm:rounded-lg md:mr-20 xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
             >
               <form
                 onKeyDown={handleKeyDown}
@@ -202,31 +198,16 @@ const FormLogin = () => {
                 <div className="flex justify-center mt-1">
                   <p className="flex flex-col md:block text-xs font-normal text-center">
                     Al Iniciar Sesión, estas aceptando los{' '}
-                    <Link
-                      onClick={openModal}
-                      className="underline text-purple-700"
-                    >
+                    <Link className="underline text-purple-700">
                       Términos y condiciones
                     </Link>{' '}
                     y nuestras políticas sobre{' '}
-                    <Link
-                      onClick={openModal}
-                      className="underline text-purple-700"
-                    >
+                    <Link className="underline text-purple-700">
                       Protección de Datos.
                     </Link>
                   </p>
                 </div>
               </form>
-                <div className={` ${modalTC ? ' w-full h-full bg-white fixed left-0 top-0 bottom-0 right-0 flex flex-col justify-center items-center' : ' hidden'}`}>
-                  <p className=' font-bold text-2xl w-96'>
-                    Términos y condiciones de uso y proteccion de datos(parte
-                    legal)
-                  </p>
-                  <button onClick={openModal} className='mt-5 bg-orange-500 text-white w-96 rounded-xl p-2'>
-                    Volver
-                  </button>
-                </div>
             </div>
           </div>
         </div>
