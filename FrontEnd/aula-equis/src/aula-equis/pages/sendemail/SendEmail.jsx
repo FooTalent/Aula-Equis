@@ -99,6 +99,7 @@ const SendEmail = () => {
             <div
               className={`flex justify-center sm:rounded-lg  xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
             >
+
               <form className="mx-24 font-bold text-white">
                 <h3 className="text-center   text-2xl">
                   Restablecer Contraseña
@@ -139,6 +140,7 @@ const SendEmail = () => {
                 </button>
               </form>
               {/* <form
+
                 onKeyDown={handleKeyDown}
                 onSubmit={handleSubmit}
                 className=" md:h-[26.5rem]"
@@ -210,6 +212,7 @@ const SendEmail = () => {
                 </div>
 
               </form> */}
+
             </div>
           </div>
         </div>
