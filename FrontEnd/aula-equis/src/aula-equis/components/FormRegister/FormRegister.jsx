@@ -1,8 +1,28 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import Navbar from '../NavBar/Navbar'
+import * as Yup from 'yup'
 import imgFormRegister from '../assets/imgFormRegister.svg'
 
 function CuentaForm () {
+  const validationRegister = Yup.object({
+    email1: Yup.string()
+      .email(<p className="text-red-600">Formato de email invalido</p>)
+      .required(<p className="text-red-600">Campo requerido</p>),
+    email2: Yup.string()
+      .email(<p className="text-red-600">Formato de email invalido</p>)
+      .required(<p className="text-red-600">Campo requerido</p>),
+    password1: Yup.string().required(
+    ),
+    password2: Yup.string().required(
+    ),
+    colegio: Yup.string().required(
+    ),
+    direccion: Yup.string().required(
+    ),
+    ciudad: Yup.string().required(
+    )
+  })
+
   return (
     <div className='bg-gradient-to-r from-[#FFC562] to-[#FFFFFF]'>
         <Navbar />
@@ -32,16 +52,17 @@ function CuentaForm () {
             direccion: '',
             ciudad: ''
           }}
-          validate={(values) => {
-            const errors = {}
-            if (values.email1 !== values.email2) {
-              errors.email2 = 'Los correos electrónicos no coinciden'
-            }
-            if (values.password1 !== values.password2) {
-              errors.password2 = 'Las contraseñas no coinciden'
-            }
-            return errors
-          }}
+          // validate={(values) => {
+          //   const errors = {}
+          //   if (values.email1 !== values.email2) {
+          //     errors.email2 = 'Los correos electrónicos no coinciden'
+          //   }
+          //   if (values.password1 !== values.password2) {
+          //     errors.password2 = 'Las contraseñas no coinciden'
+          //   }
+          //   return errors
+          // }}
+          validationSchema = {validationRegister}
           onSubmit={(values) => {
             // Manejar envío del formulario
           }}
@@ -51,8 +72,9 @@ function CuentaForm () {
               <div className="w-3/4 mt-3">
                 <h2 className="text-lg font-bold mb-1">Cuenta</h2>
                 <div className="flex flex-col">
-                  <label htmlFor="email1" className="text-xs font-bold mt-1">
-                    Email
+                  <label htmlFor="email1" className="flex text-xs font-bold mt-1">
+                    Email*
+                    <ErrorMessage name='email1' className='ml-3'/>
                   </label>
                   <Field
                     type="email"
@@ -63,8 +85,9 @@ function CuentaForm () {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="email2" className="text-xs font-bold mt-1">
-                    Email
+                  <label htmlFor="email2" className="flex text-xs font-bold mt-1">
+                    Email*
+                    <ErrorMessage name="email2" component="div" className='ml-3'/>
                   </label>
                   <Field
                     type="email"
@@ -73,11 +96,10 @@ function CuentaForm () {
                     placeholder="Repita el correo"
                     className="w-100 pl-1 rounded-md text-xs py-1.5"
                   />
-                  <ErrorMessage name="email2" component="div" />
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="password1" className="text-xs font-bold mt-1">
-                    Contraseña
+                    Contraseña*
                   </label>
                   <Field
                     type="password"
@@ -89,7 +111,7 @@ function CuentaForm () {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="password2" className="text-xs font-bold mt-1">
-                    Contraseña
+                    Contraseña*
                   </label>
                   <Field
                     type="password"
@@ -106,7 +128,7 @@ function CuentaForm () {
                 <h2 className="text-lg font-bold mb-1">Contacto</h2>
                 <div className="flex flex-col">
                   <label htmlFor="nombre" className="text-xs font-bold mt-1">
-                    Nombre
+                    Nombre*
                   </label>
                   <Field
                     type="text"
@@ -118,7 +140,7 @@ function CuentaForm () {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="apellido" className="text-xs font-bold mt-1">
-                    Apellido
+                    Apellido*
                   </label>
                   <Field
                     type="text"
@@ -130,7 +152,7 @@ function CuentaForm () {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="numeroTel" className="text-xs font-bold mt-1">
-                    Teléfono
+                    Teléfono*
                   </label>
                   <div>
                     <Field
@@ -159,7 +181,7 @@ function CuentaForm () {
                     htmlFor="colegio"
                     className="text-xs font-bold mx-2 mt-1"
                   >
-                    Colegio
+                    Colegio*
                   </label>
                   <Field
                     type="text"
@@ -174,7 +196,7 @@ function CuentaForm () {
                     htmlFor="direccion"
                     className="text-xs font-bold mx-2 mt-1"
                   >
-                    Dirección
+                    Dirección*
                   </label>
                   <Field
                     type="text"
@@ -189,7 +211,7 @@ function CuentaForm () {
                     htmlFor="ciudad"
                     className="text-xs font-bold mx-2 mt-1"
                   >
-                    Ciudad
+                    Ciudad*
                   </label>
                   <Field
                     type="text"
