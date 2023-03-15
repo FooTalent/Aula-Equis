@@ -13,12 +13,15 @@ const Navbar = () => {
               aria-label="Site Nav"
               className="hidden xl:flex uppercase xl:justify-evenly xl:gap-16 xl:font-semibold xl:mr-20"
             >
-              <Link>Home</Link>
+              <Link to="/home">Home</Link>
               <Link>Nosotros</Link>
               <Link>Contactanos</Link>
             </nav>
 
-            <Link className="xl:w-48 lg:w-36 rounded-lg bg-[#E59D1C] text-white md:mr-11 text-center cursor-pointer text-sm px-6 py-2 ">
+            <Link
+              to="/home"
+              className="xl:w-48 lg:w-36 rounded-lg bg-[#E59D1C] text-white md:mr-11 text-center cursor-pointer text-sm px-6 py-2 "
+            >
               Iniciar sesión
             </Link>
           </div>
