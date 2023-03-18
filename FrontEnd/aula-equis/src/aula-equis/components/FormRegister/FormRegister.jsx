@@ -25,17 +25,17 @@ function CuentaForm () {
   return (
     <div className="bg-gradient-to-r max-h-full from-[#FFC562] to-[#FFFFFF]">
       <Navbar />
-      <div className="flex h-screen  sm:flex-col sm:w-screen md:flex-col md:items-center">
-        <div className="hidden md:block md:mt-10">
+      <div className="flex h-screen sm:flex-col sm:w-screen md:flex-col md:items-center lg:flex-row">
+        <div className="hidden md:block md:mt-10 md:w-2/3 lg:block lg:mx-10 lg:mt-2 2xl:w-1/2 2xl:mr-52">
           <img
             src={imgFormRegister}
             alt="imagen formulario de registro"
-            className="invisible sm:hidden md:hidden xl:inline xl:w-1/2 2xl:w-8/12 my-12"
+            className="hidden lg:block xl:inline xl:ml-14"
           />
-          <p className="font-bold pb-4 text-[#114a7c] my-6 lg:text-3xl text-center xl:text-left md:block md:text-4xl ">
+          <p className="font-bold pb-4 text-[#114a7c] my-6 lg:text-3xl text-center md:block md:text-4xl xl:text-5xl">
             Pruébalo gratis por 30 días
           </p>
-          <p className="text-[#114a7c] text-start ml-10 mb-10 text-base lg:text-2xl  xl:px-0 font-medium lg:leading-10 lg:font-semibold md:block md:text-2xl">
+          <p className="text-[#114a7c] text-start ml-10 mb-10 text-base lg:text-2xl font-medium lg:leading-10 lg:font-semibold md:block md:text-2xl xl:ml-14 2xl:w-1/2">
             Descubre una nueva forma de organizar y administrar tareas dentro de
             tu institución con nuestra agenda digital
           </p>
@@ -67,7 +67,7 @@ function CuentaForm () {
             }}
           >
             {({ isSubmitting }) => (
-              <Form className="flex flex-col mt-20 items-center h-min w-60 rounded-lg bg-[#FFC562] shadow-lg shadow-black sm:w-96 md:mt-6">
+              <Form className="flex flex-col mt-20 items-center h-min w-60 rounded-lg bg-[#FFC562] shadow-lg shadow-black sm:w-96 md:mt-6 lg:mr-10 2xl:mr-5">
                 <div className="w-3/4 mt-3">
                   <h2 className="text-lg font-bold mb-1">Cuenta</h2>
                   <div className="flex flex-col">
