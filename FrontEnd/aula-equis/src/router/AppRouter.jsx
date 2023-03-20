@@ -1,3 +1,4 @@
+
 import { Route, Routes } from 'react-router-dom'
 import FormRegister from '../aula-equis/components/FormRegister/FormRegister'
 import { Home } from '../aula-equis/components/Home/Home'
@@ -18,3 +19,5 @@ export const AppRouter = () => {
     </Routes>
   )
 }
+
+
