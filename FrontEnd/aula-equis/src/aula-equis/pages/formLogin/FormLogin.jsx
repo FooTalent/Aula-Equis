@@ -6,6 +6,7 @@ import { consultarPath } from '../../../helpers'
 import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import SendEmail from '../../components/Sendemail/SendEmail'
 
 const FormLogin = () => {
   const [hidden, setHidden] = useState('password')
@@ -62,8 +63,14 @@ const FormLogin = () => {
   }
   const { handleSubmit, handleChange, handleBlur, touched, errors } = formik
   const [modalTC, setOpenModalTC] = useState(false)
+  const [modalMail, setModalMail] = useState(false)
+  const [invisible, setInvisible] = useState('flex')
   const openModal = () => {
     setOpenModalTC(!modalTC)
+  }
+  const modalEnvioMail = () => {
+    setModalMail(!modalMail)
+    setInvisible('hidden')
   }
 
   return (
@@ -71,7 +78,7 @@ const FormLogin = () => {
       <div className={`bg-gradient-to-b ${userRol.bg}`}>
         <header>
           <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-12 ">
-            <div className="mt-6  sm:mt-12 xl:mt-[61px]">
+            <div className="mt-6  sm:mt-12 xl:mt-[78px]">
               <Link className="">
                 <img
                   className="w-[91px] h-[28px] md:w-[8.688rem] md:h-[2.938rem] xl:w-[17.938rem] xl:h-24"
@@ -95,7 +102,7 @@ const FormLogin = () => {
             </div>
           </div>
         </header>
-        <div className="mx-auto max-w-screen-xl  pl-0 pr-4 md:pl-0 sm:pr-6 sm:pl-0 xl:ml-0 xl:max-w-full ">
+        <div className="mx-auto max-w-screen-xl  pl-0 pr-4 md:pl-0 sm:pr-6 sm:pl-0 xl:ml-0 xl:max-w-full">
           {
             <div className="hidden md:flex md:justify-end md:mr-[15%] md:mb-20 md:mt-36 lg:mb-0 xl:mb-4 xl:mt-24 ">
               <nav className="flex items-center justify-center font-medium">
@@ -118,116 +125,135 @@ const FormLogin = () => {
                 {userRol.rol}
               </p>
             </div>
-
-            <div
-              className={`flex justify-center sm:rounded-lg  xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
-            >
-              <form
-                onKeyDown={handleKeyDown}
-                onSubmit={handleSubmit}
-                className=" md:h-[26.5rem]"
+            {modalMail ? (
+              <SendEmail />
+            ) : (
+              <div
+                className={`${invisible} justify-center sm:rounded-lg  xl:mr-4 p-8 md:shadow-lg md:w-formLoginMd md:h-formLoginMd xl:w-[610px] lg:col-span-3 lg:p-12  md:bg-gradient-to-b ${userRol.bg}`}
               >
-                <p className="hidden md:flex md:justify-center text-center text-white text-2xl font-bold ">
-                  INICIAR SESIÓN
-                </p>
-                <div className="grid grid-cols-1 gap-7 ">
-                  <div className="">
+                <form
+                  onKeyDown={handleKeyDown}
+                  onSubmit={handleSubmit}
+                  className="md:h-[26.5rem]"
+                >
+                  <p className="hidden md:flex md:justify-center text-center text-white text-2xl font-bold ">
+                    INICIAR SESIÓN
+                  </p>
+                  <div className="grid grid-cols-1 gap-7 ">
                     <div className="">
-                      <label className="text-[#FBFBFB] mb-2" htmlFor="email">
-                        Email:
-                      </label>
-                      <input
-                        type="email"
-                        className="h-16 rounded-2xl border-2 border-gray-600  pr-12 shadow-sm w-full p-3 text-sm"
-                        placeholder="Correo electrónico"
-                        name="email"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                    </div>
-                    <div className="grid justify-end -mt-9 mr-3">
-                      <IoMdMail className="h-4 text-purple-700" />
-                    </div>
-                    {touched.email && errors.email && (
-                      <div className="flex flex-row-reverse w-[11.5rem] sm:w-[13.5rem] mt-5 text-red-500 text-xs sm:text-sm">
-                        {errors.email}
-                        <IoIosAlert />
+                      <div className="">
+                        <label className="text-[#FBFBFB] mb-2" htmlFor="email">
+                          Email:
+                        </label>
+                        <input
+                          type="email"
+                          className="h-16 rounded-2xl border-2 border-gray-600  pr-12 shadow-sm w-full p-3 text-sm"
+                          placeholder="Correo electrónico"
+                          name="email"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
                       </div>
-                    )}
-                  </div>
+                      <div className="grid justify-end -mt-9 mr-3">
+                        <IoMdMail className="h-4 text-purple-700" />
+                      </div>
+                      {touched.email && errors.email && (
+                        <div className="flex flex-row-reverse w-[11.5rem] sm:w-[13.5rem] mt-5 text-red-500 text-xs sm:text-sm">
+                          {errors.email}
+                          <IoIosAlert />
+                        </div>
+                      )}
+                    </div>
 
-                  <div className="">
                     <div className="">
-                      <label htmlFor="password" className="text-[#FBFBFB] mb-2">
-                        Contraseña:
-                      </label>
-                      <input
-                        type={hidden}
-                        className="h-16 rounded-2xl border-2 border-gray-600  pr-12 shadow-sm w-full p-3 text-sm"
-                        placeholder="Contraseña"
-                        name="password"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                    </div>
-                    <div
-                      onClick={typeInput}
-                      className="grid justify-end cursor-pointer -mt-9 mr-3"
-                    >
-                      {imgPass}
-                    </div>
-                    {touched.password && errors.password && (
-                      <div className="flex flex-row-reverse w-[15.5rem] sm:w-[19.5rem] text-red-500 mt-5 text-xs sm:text-sm">
-                        {errors.password}
-                        <IoIosAlert />
+                      <div className="">
+                        <label
+                          htmlFor="password"
+                          className="text-[#FBFBFB] mb-2"
+                        >
+                          Contraseña:
+                        </label>
+                        <input
+                          type={hidden}
+                          className="h-16 rounded-2xl border-2 border-gray-600  pr-12 shadow-sm w-full p-3 text-sm"
+                          placeholder="Contraseña"
+                          name="password"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
                       </div>
-                    )}
+                      <div
+                        onClick={typeInput}
+                        className="grid justify-end cursor-pointer -mt-9 mr-3"
+                      >
+                        {imgPass}
+                      </div>
+                      {touched.password && errors.password && (
+                        <div className="flex flex-row-reverse w-[15.5rem] sm:w-[19.5rem] text-red-500 mt-5 text-xs sm:text-sm">
+                          {errors.password}
+                          <IoIosAlert />
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div className="mt-2">
-                  <input
-                    type="submit"
-                    className="h-14 rounded-2xl  bg-yellow-500 text-sm cursor-pointer inline-block w-full mt-6  px-5 py-3 font-medium text-white"
-                    value="Iniciar sesión"
-                  />
-                </div>
-                <div className="relative flex justify-center mt-2">
-                  <p className="text-xs font-normal text-center" href="">
-                    ¿Olvidaste tu contraseña?{' '}
-                    <Link className="underline text-purple-700">
-                      Restablecer constraseña
-                    </Link>
-                  </p>
-                </div>
-                <div className="flex justify-center mt-1">
-                  <p className="flex flex-col md:block text-xs font-normal text-center">
-                    Al Iniciar Sesión, estas aceptando los{' '}
-                    <Link
-                      onClick={openModal}
-                      className="underline text-purple-700"
-                    >
-                      Términos y condiciones
-                    </Link>{' '}
-                    y nuestras políticas sobre{' '}
-                    <Link
-                      onClick={openModal}
-                      className="underline text-purple-700"
-                    >
-                      Protección de Datos.
-                    </Link>
-                  </p>
-                </div>
-              </form>
-                <div className={` ${modalTC ? ' w-full h-full bg-white fixed left-0 top-0 bottom-0 right-0 flex flex-col justify-center items-center' : ' hidden'}`}>
-                  <p className=' font-bold text-2xl w-96'>
+                  <div className="mt-2">
+                    <input
+                      type="submit"
+                      className="h-14 rounded-2xl  bg-yellow-500 text-sm cursor-pointer inline-block w-full mt-6  px-5 py-3 font-medium text-white"
+                      value="Iniciar sesión"
+                    />
+                  </div>
+                  <div className="relative flex justify-center mt-2">
+                    <p className="text-xs font-normal text-center" href="">
+                      ¿Olvidaste tu contraseña?{' '}
+                      <Link
+                        onClick={modalEnvioMail}
+                        className="underline text-purple-700"
+                      >
+                        Restablecer constraseña
+                      </Link>
+                    </p>
+                  </div>
+                  <div className="flex justify-center mt-1">
+                    <p className="flex flex-col md:block text-xs font-normal text-center">
+                      Al Iniciar Sesión, estas aceptando los{' '}
+                      <Link
+                        onClick={openModal}
+                        className="underline text-purple-700"
+                      >
+                        Términos y condiciones
+                      </Link>{' '}
+                      y nuestras políticas sobre{' '}
+                      <Link
+                        onClick={openModal}
+                        className="underline text-purple-700"
+                      >
+                        Protección de Datos.
+                      </Link>
+                    </p>
+                  </div>
+                </form>
+
+                <div
+                  className={` ${
+                    modalTC
+                      ? ' w-full h-full bg-white fixed left-0 top-0 bottom-0 right-0 flex flex-col justify-center items-center'
+                      : ' hidden'
+                  }`}
+                >
+                  <p className=" font-bold text-2xl w-96">
                     Términos y condiciones de uso y proteccion de datos(parte
                     legal)
                   </p>
-                  <button onClick={openModal} className='mt-5 bg-orange-500 text-white w-96 rounded-xl p-2'>
+                  <button
+                    onClick={openModal}
+                    className="mt-5 bg-orange-500 text-white w-96 rounded-xl p-2"
+                  >
                     Volver
                   </button>
                 </div>
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
