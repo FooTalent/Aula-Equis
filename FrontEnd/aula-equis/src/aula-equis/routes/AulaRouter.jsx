@@ -13,10 +13,7 @@ export const AulaRouter = () => {
       <Route exact path="/login-tutor" element={<FormLogin />} />
       <Route exact path="/login-escuela" element={<FormLogin />} />
       <Route exact path="/login-register" element={<FormRegister />} />
-      <Route exact path="/login-send-email-alumno" element={<SendEmail />} />
-      <Route exact path="/login-send-email-docente" element={<SendEmail />} />
-      <Route exact path="/login-send-email-tutor" element={<SendEmail />} />
-      <Route exact path="/login-send-email-escuela" element={<SendEmail />} />
+      <Route exact path="/login-sendEmail" element={<SendEmail />} />
       <Route exact path="/password-recovery-alumno" element={<SendEmail />} />
       <Route exact path="/password-recovery-docente" element={<SendEmail />} />
       <Route exact path="/password-recovery-tutor" element={<SendEmail />} />
