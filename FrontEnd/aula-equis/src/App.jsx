@@ -1,7 +1,7 @@
-import { AppRouter } from './router/AppRouter'
+import { AulaRouter } from './aula-equis/routes/AulaRouter'
 
-function App () {
-  return <AppRouter />
+function App() {
+  return <AulaRouter />
 }
 
 export default App
